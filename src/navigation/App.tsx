@@ -1,5 +1,6 @@
 import React, {useEffect, useRef} from 'react';
-import {Platform, StatusBar} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {Platform, View, StatusBar, Text, Image} from 'react-native';
 import {useFonts} from 'expo-font';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import * as SplashScreen from 'expo-splash-screen';
@@ -74,9 +75,23 @@ export default () => {
     },
   };
 
+  const MyHeader = () => {
+    const {
+      tokens: {space, fontSizes},
+    } = useTheme();
+    return (
+      <View style={styles.container}>
+        <Image
+          source={require('../assets/images/logo.png')}
+          alt="logo"
+          style={{width: '30%', resizeMode: 'contain'}}
+        />
+      </View>
+    );
+  };
   return (
     <Authenticator.Provider>
-      <Authenticator>
+      <Authenticator Header={MyHeader}>
         <TranslationProvider>
           <ThemeProvider theme={theme} setTheme={setTheme}>
             <NavigationContainer ref={navigationRef} theme={navigationTheme}>
@@ -88,3 +103,11 @@ export default () => {
     </Authenticator.Provider>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+  },
+});

@@ -49,9 +49,9 @@
     }
   },
   "app": {
-    "name": "Soft UI",
+    "name": "HealthCare",
     "fullname": "Soft UI Kit",
-    "native": "React Native",
+    "native": "Naukri",
     "link": "creative-tim.com"
   },
   "darkMode": "Dark Mode",
@@ -66,7 +66,7 @@
     "extra": "Extra - Automotive"
   },
   "navigation": {
-    "home": "Soft UI",
+    "home": "Healthcare Naukri",
     "components": "Components",
     "articles": "Soft UI",
     "rentals": "Soft UI",
