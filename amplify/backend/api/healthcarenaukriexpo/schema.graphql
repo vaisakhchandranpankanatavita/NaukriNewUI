@@ -1,0 +1,10 @@
+type Todo @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  dateOfBirth: AWSDate!
+  country: String!
+  state: String!
+  district: String
+  age: Int
+}
+ 

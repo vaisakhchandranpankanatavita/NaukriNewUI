@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-healthcarenaukriexpo-dev-223819-authRole",
+      "UnauthRoleArn": "arn:aws:iam::858361418733:role/amplify-healthcarenaukriexpo-dev-223819-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::858361418733:role/amplify-healthcarenaukriexpo-dev-223819-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-healthcarenaukriexpo-dev-223819-deployment",
+      "UnauthRoleName": "amplify-healthcarenaukriexpo-dev-223819-unauthRole",
+      "StackName": "amplify-healthcarenaukriexpo-dev-223819",
+      "StackId": "arn:aws:cloudformation:us-east-1:858361418733:stack/amplify-healthcarenaukriexpo-dev-223819/7ab74d70-53ea-11ee-a3c2-0a0a2e1f820f",
+      "AmplifyAppId": "d2pvhgb4hhai0p"
+    },
+    "categories": {
+      "auth": {
+        "healthcarenaukriexpo19a85b5a": {}
+      },
+      "api": {
+        "healthcarenaukriexpo": {}
+      }
+    }
+  }
+}
