@@ -7,7 +7,7 @@ import {States} from './States';
 import {useData, useTheme, useTranslation} from '../hooks/';
 import * as regex from '../constants/regex';
 import {IRegistrationValidation, IRegistration, isAndroid} from './Register';
-
+import * as DocumentPicker from 'expo-document-picker';
 export const Register = () => {
   const {isDark} = useData();
   const {t} = useTranslation();
@@ -45,7 +45,38 @@ export const Register = () => {
     },
     [setRegistration],
   );
+  const pickDocument = async () => {
+    // Let user pick a PDF document
+    let result = await DocumentPicker.getDocumentAsync({
+      type: 'application/pdf', // mime type for PDF
+    });
 
+    if (result.type === 'success') {
+      uploadFile(result.uri);
+    } else {
+      // Handle user cancelling or any errors here
+    }
+  };
+  const uploadFile = async (uri) => {
+    let formData = new FormData();
+    formData.append('file', {
+      uri,
+      name: 'uploadedFile.pdf',
+      type: 'application/pdf',
+    });
+
+    try {
+      let response = await fetch('YOUR_SERVER_ENDPOINT', {
+        method: 'POST',
+        body: formData,
+      });
+
+      let data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error('Error uploading file:', error);
+    }
+  };
   const handleSignUp = useCallback(() => {
     /** send/save registratin data */
     console.log('te');
@@ -191,7 +222,6 @@ export const Register = () => {
                   autoCapitalize="none"
                   marginBottom={sizes.m}
                   marginTop={10}
-                  label={'Registration Number'}
                   placeholder={'Registration Number'}
                   success={Boolean(registration.name && isValid.name)}
                   danger={Boolean(registration.name && !isValid.name)}
@@ -271,6 +301,68 @@ export const Register = () => {
                     />
                   </Block>
                 </Button>
+                {additionalQualifications === 'Fresher' && (
+                  <Button
+                    flex={1}
+                    row
+                    marginTop={10}
+                    gradient={gradients.secondary}
+                    onPress={pickDocument}>
+                    <Block
+                      row
+                      align="center"
+                      justify="space-between"
+                      paddingHorizontal={sizes.sm}>
+                      <Text
+                        white
+                        bold
+                        transform="uppercase"
+                        marginRight={sizes.sm}>
+                        Upload Resume
+                      </Text>
+                    </Block>
+                  </Button>
+                )}
+                {additionalQualifications === 'Experienced' && (
+                  <>
+                    <Input
+                      autoCapitalize="none"
+                      marginTop={10}
+                      placeholder={'Hospital Name'}
+                      success={Boolean(registration.name && isValid.name)}
+                      danger={Boolean(registration.name && !isValid.name)}
+                      onChangeText={(value) => handleChange({name: value})}
+                    />
+                    <Input
+                      autoCapitalize="none"
+                      marginBottom={sizes.m}
+                      marginTop={sizes.m}
+                      placeholder={'Designation'}
+                      success={Boolean(registration.name && isValid.name)}
+                      danger={Boolean(registration.name && !isValid.name)}
+                      onChangeText={(value) => handleChange({name: value})}
+                    />
+                    <Button
+                      flex={1}
+                      row
+                      gradient={gradients.secondary}
+                      onPress={pickDocument}>
+                      <Block
+                        row
+                        align="center"
+                        justify="space-between"
+                        paddingHorizontal={sizes.sm}>
+                        <Text
+                          white
+                          bold
+                          transform="uppercase"
+                          marginRight={sizes.sm}>
+                          Upload Resume
+                        </Text>
+                      </Block>
+                    </Button>
+                  </>
+                )}
               </Block>
               <Modal
                 visible={showModal.additionalQualifications}
@@ -430,27 +522,26 @@ export const Register = () => {
                 </Text>
               </Text>
             </Block> */}
-              <Button
-                onPress={handleSignUp}
-                marginVertical={sizes.s}
-                marginHorizontal={sizes.sm}
-                gradient={gradients.primary}
-                disabled={Object.values(isValid).includes(false)}>
-                <Text bold white transform="uppercase">
-                  {t('common.signup')}
-                </Text>
-              </Button>
-              <Button
-                primary
-                outlined
-                shadow={!isAndroid}
-                marginVertical={sizes.s}
-                marginHorizontal={sizes.sm}
-                onPress={() => navigation.navigate('Pro')}>
-                <Text bold primary transform="uppercase">
-                  {t('common.signin')}
-                </Text>
-              </Button>
+              <Block row center>
+                <Button
+                  marginVertical={sizes.s}
+                  marginHorizontal={sizes.sm}
+                  onPress={handleSignUp}
+                  disabled={Object.values(isValid).includes(false)}>
+                  <Text bold info transform="uppercase">
+                    {t('common.signup')}
+                  </Text>
+                </Button>
+                <Button
+                  shadow={!isAndroid}
+                  marginVertical={sizes.s}
+                  marginHorizontal={sizes.sm}
+                  onPress={() => navigation.navigate('Pro')}>
+                  <Text bold dark transform="uppercase">
+                    {t('common.signin')}
+                  </Text>
+                </Button>
+              </Block>
             </Block>
           </Block>
         </Block>
