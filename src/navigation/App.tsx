@@ -21,7 +21,7 @@ export default () => {
     async function checkAuthStatus() {
       try {
         await Auth.currentAuthenticatedUser();
-        navigationRef.current?.navigate('Components');
+        navigationRef.current?.navigate('Home');
       } catch (error) {
         console.log('User is not authenticated', error);
       }

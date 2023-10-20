@@ -56,13 +56,13 @@
   },
   "darkMode": "Dark Mode",
   "screens": {
+    "register": "Create account",
     "home": "Home",
     "components": "Components",
     "articles": "Articles",
     "rental": "Rental",
     "profile": "Profile",
     "settings": "Settings",
-    "register": "Create account",
     "extra": "Extra - Automotive"
   },
   "navigation": {
@@ -89,12 +89,12 @@
     "documentation": "Documentation"
   },
   "home": {
-    "title": "Soft UI",
+    "title": "HealthCare",
     "following": "Following",
     "trending": "Trending"
   },
   "register": {
-    "title": "Welcome",
+    "title": "HealthCare Naukri",
     "subtitle": "Register with"
   },
   "profile": {

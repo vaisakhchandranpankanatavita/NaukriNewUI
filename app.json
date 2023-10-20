@@ -5,19 +5,17 @@
     "description": "React Native - Soft UI Kit - Free",
     "primaryColor": "#CB0C9F",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "center",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "cover",
-      "backgroundColor": "#CB0C9F"
+      "image": "./assets/logosplash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },

@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {Alert, Animated, Linking, StyleSheet} from 'react-native';
-
+import {Auth} from 'aws-amplify';
 import {
   useIsDrawerOpen,
   createDrawerNavigator,
@@ -68,14 +68,21 @@ const DrawerContent = (
   const {navigation} = props;
   const {t} = useTranslation();
   const {isDark, handleIsDark} = useData();
-  const [active, setActive] = useState('Home');
+  const [active, setActive] = useState('ProfileSignup');
   const {assets, colors, gradients, sizes} = useTheme();
   const labelColor = colors.text;
-
   const handleNavigation = useCallback(
-    (to) => {
-      setActive(to);
-      navigation.navigate(to);
+    async (to) => {
+      if (to === 'Sign Out') {
+        try {
+          await Auth.signOut();
+        } catch (error) {
+          console.log('error signing out: ', error);
+        }
+      } else {
+        setActive(to);
+        navigation.navigate(to);
+      }
     },
     [navigation, setActive],
   );
@@ -85,13 +92,13 @@ const DrawerContent = (
   // screen list for Drawer menu
   const screens = [
     {name: t('screens.home'), to: 'Home', icon: assets.home},
-    {name: t('screens.components'), to: 'Components', icon: assets.components},
-    {name: t('screens.articles'), to: 'Articles', icon: assets.document},
-    {name: t('screens.rental'), to: 'Pro', icon: assets.rental},
-    {name: t('screens.profile'), to: 'Profile', icon: assets.profile},
-    {name: t('screens.settings'), to: 'Pro', icon: assets.settings},
-    {name: t('screens.register'), to: 'Register', icon: assets.register},
-    {name: t('screens.extra'), to: 'Pro', icon: assets.extras},
+    {name: 'Logout', to: 'Sign Out', icon: assets.extras},
+    // {name: t('screens.components'), to: 'Components', icon: assets.components},
+    // {name: t('screens.articles'), to: 'Articles', icon: assets.document},
+    // {name: t('screens.rental'), to: 'Pro', icon: assets.rental},
+    // {name: t('screens.profile'), to: 'Profile', icon: assets.profile},
+    // {name: t('screens.settings'), to: 'Pro', icon: assets.settings},
+    // {name: t('screens.extra'), to: 'Pro', icon: assets.extras},
   ];
 
   return (
@@ -154,7 +161,7 @@ const DrawerContent = (
           );
         })}
 
-        <Block
+        {/* <Block
           flex={0}
           height={1}
           marginRight={sizes.md}
@@ -194,7 +201,7 @@ const DrawerContent = (
           <Text p color={labelColor}>
             {t('menu.started')}
           </Text>
-        </Button>
+        </Button> */}
       </Block>
     </DrawerContentScrollView>
   );

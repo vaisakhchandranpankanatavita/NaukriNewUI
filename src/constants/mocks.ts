@@ -86,44 +86,30 @@ export const FOLLOWING: IProduct[] = [
   {
     id: 1,
     type: 'vertical',
-    title: 'Unique activities with local experts.',
+    title: 'Job Offer 1',
     image:
       'https://images.unsplash.com/photo-1604998103924-89e012e5265a?fit=crop&w=450&q=80',
   },
   {
     id: 2,
     type: 'vertical',
-    title: 'The highest status people.',
+    title: 'Job offer 3.',
     image:
       'https://images.unsplash.com/photo-1563492065599-3520f775eeed?fit=crop&w=450&q=80',
   },
   {
     id: 3,
     type: 'horizontal',
-    title: 'Experiences and things to do wherever you are.',
+    title: 'Job Offer 1.',
     image:
       'https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?fit=crop&w=450&q=80',
   },
   {
     id: 4,
     type: 'vertical',
-    title: 'Get more followers and grow.',
+    title: 'Job Offer 2',
     image:
       'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?fit=crop&w=450&q=80',
-  },
-  {
-    id: 5,
-    type: 'vertical',
-    title: 'New ways to meet your business goals.',
-    image:
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?fit=crop&w=450&q=80',
-  },
-  {
-    id: 6,
-    type: 'horizontal',
-    title: 'Adventures - Multi day trips with meals and stays.',
-    image:
-      'https://images.unsplash.com/photo-1468078809804-4c7b3e60a478?fit=crop&w=450&q=80',
   },
 ];
 
@@ -132,37 +118,9 @@ export const TRENDING: IProduct[] = [
   {
     id: 1,
     type: 'horizontal',
-    title: 'Experiences and things to do wherever you are.',
+    title: 'Job Offer 1',
     image:
       'https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?fit=crop&w=450&q=80',
-  },
-  {
-    id: 2,
-    type: 'vertical',
-    title: 'The highest status people.',
-    image:
-      'https://images.unsplash.com/photo-1563492065599-3520f775eeed?fit=crop&w=450&q=80',
-  },
-  {
-    id: 3,
-    type: 'vertical',
-    title: 'Unique activities with local experts.',
-    image:
-      'https://images.unsplash.com/photo-1604998103924-89e012e5265a?fit=crop&w=450&q=80',
-  },
-  {
-    id: 4,
-    type: 'vertical',
-    title: 'Adventures - Multi day trips with meals and stays.',
-    image:
-      'https://images.unsplash.com/photo-1468078809804-4c7b3e60a478?fit=crop&w=450&q=80',
-  },
-  {
-    id: 5,
-    type: 'vertical',
-    title: 'New ways to meet your business goals.',
-    image:
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?fit=crop&w=450&q=80',
   },
 ];
 
@@ -178,7 +136,7 @@ export const CATEGORIES: ICategory[] = [
 export const ARTICLE_OPTIONS: IArticleOptions[] = [
   {
     id: 1,
-    title: 'Single room in center',
+    title: 'Job offer 2',
     description:
       'As Uber works through a huge amount of internal management turmoil, the company is also consolidating.',
     type: 'room',
@@ -191,9 +149,8 @@ export const ARTICLE_OPTIONS: IArticleOptions[] = [
   },
   {
     id: 2,
-    title: 'Cosy apartment',
-    description:
-      'Different people have different taste, and various types of music have many ways of leaving an impact on someone.',
+    title: 'Job offer 2',
+    description: 'Job offer 2',
     type: 'apartment',
     guests: 3,
     sleeping: {total: 2, type: 'bed'},
@@ -204,9 +161,8 @@ export const ARTICLE_OPTIONS: IArticleOptions[] = [
   },
   {
     id: 3,
-    title: 'Single room in center',
-    description:
-      'As Uber works through a huge amount of internal management turmoil, the company is also consolidating.',
+    title: 'Job offer 2',
+    description: 'Job offer 2',
     type: 'room',
     guests: 1,
     sleeping: {total: 1, type: 'sofa'},
@@ -222,28 +178,28 @@ export const OFFERS: IProduct[] = [
   {
     id: 1,
     type: 'vertical',
-    title: 'Unique activities with local experts.',
+    title: 'Job offer 2.',
     image:
       'https://images.unsplash.com/photo-1604998103924-89e012e5265a?fit=crop&w=450&q=80',
   },
   {
     id: 2,
     type: 'vertical',
-    title: 'The highest status people.',
+    title: 'Job offer 2',
     image:
       'https://images.unsplash.com/photo-1563492065599-3520f775eeed?fit=crop&w=450&q=80',
   },
   {
     id: 3,
     type: 'vertical',
-    title: 'Get more followers and grow.',
+    title: 'Job offer 2',
     image:
       'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?fit=crop&w=450&q=80',
   },
   {
     id: 4,
     type: 'vertical',
-    title: 'New ways to meet your business goals.',
+    title: 'Job offer 2',
     image:
       'https://images.unsplash.com/photo-1497215728101-856f4ea42174?fit=crop&w=450&q=80',
   },
@@ -260,7 +216,7 @@ export const LOCATIONS: ILocation[] = [
 export const ARTICLES: IArticle[] = [
   {
     id: 1,
-    title: 'Flexible office space means growth.',
+    title: 'Job offer 2.',
     description:
       'Rather than worrying about switching offices every couple years, you can instead stay in the same location.',
     category: CATEGORIES[0],
@@ -272,7 +228,7 @@ export const ARTICLES: IArticle[] = [
   },
   {
     id: 2,
-    title: 'Global payments in a single integration.',
+    title: 'Job offer 2.',
     description:
       'Rather than worrying about switching offices every couple years, you can instead stay.',
     category: CATEGORIES[0],
@@ -284,7 +240,7 @@ export const ARTICLES: IArticle[] = [
   },
   {
     id: 3,
-    title: 'Working with the latest technologies.',
+    title: 'Job offer 2.',
     description:
       'Rather than worrying about switching offices every couple years, you can instead stay in the same location.',
     category: CATEGORIES[0],
@@ -294,8 +250,12 @@ export const ARTICLES: IArticle[] = [
     user: USERS[2],
     timestamp: dayjs().unix(),
   },
+];
+
+// rental recommendations
+export const RECOMMENDATIONS: IArticle[] = [
   {
-    id: 4,
+    id: 1,
     title: 'Office space means growth.',
     description:
       'Rather than worrying about switching offices every couple years, you can instead stay in the same location.',
@@ -400,35 +360,7 @@ export const ARTICLES: IArticle[] = [
     rating: 4.5,
     timestamp: dayjs().unix(),
   },
-  {
-    id: 13,
-    description:
-      'The most beautiful and complex UI Kits built by Creative Tim.',
-    category: CATEGORIES[3], // best deal
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1486299267070-83823f5448dd?fit=crop&w=450&q=80',
-    location: LOCATIONS[2],
-    rating: 4.8,
-    timestamp: dayjs().unix(),
-  },
-];
 
-// rental recommendations
-export const RECOMMENDATIONS: IArticle[] = [
-  {
-    id: 1,
-    description:
-      'A great to stay in Paris without feeling you are in the city!',
-    category: CATEGORIES[3], // best deal
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?fit=crop&w=450&q=80',
-    location: LOCATIONS[0],
-    rating: 4.9,
-    offers: OFFERS,
-    timestamp: dayjs().unix(),
-  },
   {
     id: 2,
     description: 'Best Italy location in a bustling neighbourhood, 2 min.',
