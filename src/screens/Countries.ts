@@ -1,4 +1,5 @@
 export const Countries = [
+  {name: 'India', code: 'IN'},
   {name: 'Afghanistan', code: 'AF'},
   {name: 'land Islands', code: 'AX'},
   {name: 'Albania', code: 'AL'},
@@ -98,7 +99,7 @@ export const Countries = [
   {name: 'Hong Kong', code: 'HK'},
   {name: 'Hungary', code: 'HU'},
   {name: 'Iceland', code: 'IS'},
-  {name: 'India', code: 'IN'},
+
   {name: 'Indonesia', code: 'ID'},
   {name: 'Iran, Islamic Republic Of', code: 'IR'},
   {name: 'Iraq', code: 'IQ'},

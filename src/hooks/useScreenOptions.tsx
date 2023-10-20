@@ -42,11 +42,12 @@ export default () => {
       <Block row flex={0} align="center" marginRight={sizes.padding}>
         <TouchableOpacity
           style={{marginRight: sizes.sm}}
-          onPress={() =>
-            navigation.navigate('Screens', {
-              screen: 'Pro',
-            })
-          }>
+          // onPress={() =>
+          //   navigation.navigate('Screens', {
+          //     screen: 'Pro',
+          //   })
+          // }
+        >
           <Image source={icons.bell} radius={0} color={colors.icon} />
           <Block
             flex={0}
@@ -59,11 +60,12 @@ export default () => {
           />
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() =>
-            navigation.navigate('Screens', {
-              screen: 'Pro',
-            })
-          }>
+        // onPress={() =>
+        //   navigation.navigate('Screens', {
+        //     screen: 'Pro',
+        //   })
+        // }
+        >
           <Image source={icons.basket} radius={0} color={colors.icon} />
           <Block
             flex={0}
@@ -89,11 +91,7 @@ export default () => {
     stack: menu,
     components: {
       ...menu,
-      headerTitle: () => (
-        <Text p white>
-          {t('navigation.components')}
-        </Text>
-      ),
+      headerTitle: () => <Text p white></Text>,
       headerRight: () => null,
       headerLeft: () => (
         <Button
@@ -154,19 +152,6 @@ export default () => {
               radius={sizes.xs}
               position="absolute"
               gradient={gradients?.primary}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() =>
-              navigation.dispatch(
-                DrawerActions.jumpTo('Screens', {screen: 'Profile'}),
-              )
-            }>
-            <Image
-              radius={6}
-              width={24}
-              height={24}
-              source={{uri: user.avatar}}
             />
           </TouchableOpacity>
         </Block>

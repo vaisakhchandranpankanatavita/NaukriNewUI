@@ -47,7 +47,7 @@ const Home = () => {
               <Image source={assets.extras} color={colors.white} radius={0} />
             </Block>
             <Text p font={fonts?.[tab === 0 ? 'medium' : 'normal']}>
-              {t('home.following')}
+              Feed
             </Text>
           </Block>
         </Button>
@@ -76,7 +76,7 @@ const Home = () => {
               />
             </Block>
             <Text p font={fonts?.[tab === 1 ? 'medium' : 'normal']}>
-              {t('home.trending')}
+              Applied Jobs
             </Text>
           </Block>
         </Button>
